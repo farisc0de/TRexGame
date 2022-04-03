@@ -54,9 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
     obstacle.style.left = obstaclePosition + "px";
 
     let timerId = setInterval(function () {
-      if (obstaclePosition > 0 && obstaclePosition < 60 && position < 60) {
+      if (obstaclePosition > 0 && obstaclePosition < 64 && position < 64) {
         clearInterval(timerId);
-        alert.innerHTML = "Game Over";
+        let gameOver = ``;
+        gameOver += "Game Over !";
+        gameOver += "<br />";
+        gameOver += `<button onclick="location.reload();">Restart the Game</button>`;
+
+        alert.innerHTML = gameOver;
         isGameOver = true;
 
         body.removeChild(body.firstChild);
